@@ -19,3 +19,10 @@
     
     detail *nav=[self.storyboard instantiateViewControllerWithIdentifier:@"Detail"];
     [self.navigationController pushViewController:nav animated:NO];
+
+
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[NSUserDefaults standardUserDefaults] setObject:JSON forKey:path];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+            });
